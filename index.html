@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simpsons Hangman</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BootstrapCSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+
+<body onLoad="reset(); return true;">
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h1>Simpsons Hangman</h1>
+			<h2>You have 8 tries to guess the character's name or homer blows up the factory!</h2>
+			<h2>Press any of the buttons to get started</h2>
+			<hr style="width: 100%; border:3px solid #fff;">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 pull-right">
+			<div class="homer">
+				<img  id="homer" class="img-responsive" src="assets/images/homer.jpg">
+			</div>
+		</div>
+		<div class="col-md-6 pull-left">
+			<div class="left-contnet">
+			<form name="game">
+				<p class="form-text">
+				Display Word: &nbsp;&nbsp;&nbsp;<input type="text" style="cursor:no-drop; width:200px; font-size:25px; background:transparent; border:none" name="displayWord" disabled />
+				<br>
+				<br>
+				Used Letters: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="cursor:no-drop; width:200px; font-size:25px;background:transparent; border:none" name="usedLetters" disabled />
+				</p>
+				<br>
+				<p>
+				Lives Left: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" style="cursor:no-drop; width:200px; font-size:25px;background:transparent; border:none" name="livesLeft"  disabled />
+				</p>
+			</form>
+			<br>
+			<br>
+			<div class="button-contnet">
+
+<a href="javascript:selectLetter('Q');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="Q"></a>
+<a href="javascript:selectLetter('W');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="W"></a>
+<a href="javascript:selectLetter('E');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="E"></a>
+<a href="javascript:selectLetter('R');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="R"></a>
+<a href="javascript:selectLetter('T');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="T"></a>
+<a href="javascript:selectLetter('Y');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="Y"></a>
+<a href="javascript:selectLetter('U');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="U"></a>
+<a href="javascript:selectLetter('I');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="I"></a>
+<a href="javascript:selectLetter('O');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="O"></a>
+<a href="javascript:selectLetter('P');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="P"></a>
+<br>
+<br>
+<a href="javascript:selectLetter('A');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="A"></a>
+<a href="javascript:selectLetter('S');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="S"></a>
+<a href="javascript:selectLetter('D');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="D"></a>
+<a href="javascript:selectLetter('F');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="F"></a>
+<a href="javascript:selectLetter('G');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="G"></a>
+<a href="javascript:selectLetter('H');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="H"></a>
+<a href="javascript:selectLetter('J');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="J"></a>
+<a href="javascript:selectLetter('K');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="K"></a>
+<a href="javascript:selectLetter('L');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="L"></a>
+<br>
+<br>
+<a href="javascript:selectLetter('Z');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="Z"></a>
+<a href="javascript:selectLetter('X');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="X"></a>
+<a href="javascript:selectLetter('C');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="C"></a>
+<a href="javascript:selectLetter('V');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="V"></a>
+<a href="javascript:selectLetter('B');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="B"></a>
+<a href="javascript:selectLetter('N');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="N"></a>
+<a href="javascript:selectLetter('M');"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="M"></a>
+</div>
+</div>
+</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<a href="javascript:reset()"><input type="button" style="cursor:pointer; margin-left: 10px; font-size:25px;" value="Reset game"></a>
+		</div>
+	</div>
+</div>
+</div>
+  <audio id="my_audio" src="TheSimpsons.mp3" loop="loop"></audio>
+  <audio id="doh"  src="Doh.mp3"></audio>
+  <audio id="wooHoo" src="Woohoo.mp3"></audio>
+    <!-- jQuery -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="./assets/js/game.js"></script>
+<script type="text/javascript">
+
+
+$( document ).ready(function() {
+    $( "#my_audio" ).get(0).play();
+});
+</script>
+</body>
+</html>
+
